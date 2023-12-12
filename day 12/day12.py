@@ -22,9 +22,15 @@ def find_arrangement(report, groups):
         g = groups[0]
         damaged = [ True for x in report[:g] if x == '#']
 
+        #count number of #
+        # if less than g
+            # and next ., then return 0
+            # or next ?, then replace with # and retry function 
+        # if equal then pop groups and amount matching
+        # if more than g, return 0
+
         try:
-            if len(damaged) < 
-            if damaged and report[g] != '#':
+            if all(damaged) and report[g] != '#':
                 arrangements = find_arrangement(report[g:], groups[1:])
         except IndexError:
             pass
